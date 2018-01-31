@@ -72,6 +72,7 @@ Additional parameters for the command.
   secrets_in_params  <true>
   site               undef
   state              undef
+  hd                 undef
   token_scheme       'auth-header:Bearer'
   user_agent         <created internally>
 
@@ -99,6 +100,15 @@ Auth header gets included.
 =item site => URI
 
 =item state => STRING
+
+=item hd => STRING
+
+Passthrough parameter that allows you to restrict one's login to a particular
+Google Apps domain. The application making the call should check that the
+returned value for hd matches the expected domain as the user can change the
+hd parameter in the original request.
+See https://developers.google.com/identity/protocols/OpenIDConnect#hd-param
+for more details.
 
 =item token_scheme => SCHEME
 
@@ -142,6 +152,8 @@ Merge the access token inside a form body via 'form-body:oauth_token'
 =item $obj-E<gt>B<site>()
 
 =item $obj-E<gt>B<state>()
+
+=item $obj-E<gt>B<hd>()
 
 =item $obj-E<gt>B<user_agent>()
 

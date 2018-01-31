@@ -70,6 +70,7 @@ Extends L<"Constructors" in Net::OAuth2::Profile|Net::OAuth2::Profile/"Construct
   secrets_in_params  Net::OAuth2::Profile  <true>
   site               Net::OAuth2::Profile  undef
   state              Net::OAuth2::Profile  undef
+  hd                 Net::OAuth2::Profile  undef
   token_scheme       Net::OAuth2::Profile  'auth-header:Bearer'
   user_agent         Net::OAuth2::Profile  <created internally>
 
@@ -103,6 +104,8 @@ link was found.
 =item site => URI
 
 =item state => STRING
+
+=item hd => STRING
 
 =item token_scheme => SCHEME
 
@@ -152,6 +155,10 @@ Inherited, see L<Net::OAuth2::Profile/"Accessors">
 
 Inherited, see L<Net::OAuth2::Profile/"Accessors">
 
+=item $obj-E<gt>B<hd>()
+
+Inherited, see L<Net::OAuth2::Profile/"Accessors">
+
 =item $obj-E<gt>B<user_agent>()
 
 Inherited, see L<Net::OAuth2::Profile/"Accessors">
@@ -178,6 +185,7 @@ docs on what your server expects.
   response_type  'code'
   scope          undef
   state          undef
+  hd             undef
 
 =over 2
 
@@ -188,6 +196,8 @@ docs on what your server expects.
 =item scope => STRING
 
 =item state => STRING
+
+=item hd => STRING
 
 =back
 
@@ -282,7 +292,7 @@ L<https://tools.ietf.org/html/rfc6749|RFC6749>
 
 It needs a C<client_id>: usually the name of the service where you want
 get access to.  The answer is a redirect, based on the C<redirection_uri>
-which you usually pass on.  Additional C<scope> and C<state> parameters
+which you usually pass on.  Additional C<scope>, C<state> and C<hd> parameters
 can be needed or useful.  The redirect will provide you with (amongst other
 things) a C<code> parameter.
 

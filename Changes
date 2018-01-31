@@ -2,6 +2,14 @@
 === Version history of Net::OAuth2
 All changes by Mark Overmeer unless noted otherwise.
 
+version 0.64: Mon 30 Jan 21:39:00 ART 2018
+
+	Improvements:
+	- added 'hd' passthru parameter to requests [Diego Garcia del Rio]
+	  see: https://developers.google.com/identity/protocols/OpenIDConnect#hd-param
+		for usecases.
+
+
 version 0.63: Mon 18 Jan 13:51:55 CET 2016
 
 	Fixes:

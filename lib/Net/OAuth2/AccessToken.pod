@@ -169,6 +169,8 @@ the profile.
 
 =item $obj-E<gt>B<state>()
 
+=item $obj-E<gt>B<hd>()
+
 =item $obj-E<gt>B<token_type>()
 
 =back
